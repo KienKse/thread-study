@@ -6,7 +6,7 @@ import br.com.ucsal.threads.thread.ThreadK;
 
 public class Execute {
 
-	private static final Integer BASE_LIFE = 5;
+	private static final Integer BASE_LIFE = 20;
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -19,9 +19,11 @@ public class Execute {
 		Character briiu = new Character("Bright Aurora", 23 , "Human", "Swordsman Warrior", BASE_LIFE);
 		Character kent = new Character("Kent", 28 , "Dragokin", "Swordsman Warrior", BASE_LIFE);
 
-		//new Thread(new ThreadK(coeiu, briiu)).start();
-		new Thread(new ThreadDamage(coeiu, briiu)).start();
-		new Thread(new ThreadDamage(briiu, coeiu)).start();
+		Thread apresentacao = new Thread(new ThreadK(coeiu, briiu));
+		apresentacao.start();
+		apresentacao.join();
+		new Thread(new ThreadDamage(kent, briiu)).start();
+		new Thread(new ThreadDamage(briiu, kent)).start();
 	}
 	
 }

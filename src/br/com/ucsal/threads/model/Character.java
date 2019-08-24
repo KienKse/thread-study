@@ -2,6 +2,8 @@ package br.com.ucsal.threads.model;
 
 public class Character {
 	
+	private static final Integer MAX_DAMAGE = 5;
+	
 	private String name;
 	private Integer age;
 	private String breed;
@@ -23,21 +25,24 @@ public class Character {
 	}
 	
 	public Integer getDamage() {
-		return (int) (Math.random()*10) + 1;
+		return (int) (Math.random()*MAX_DAMAGE) + 1;
 	}
 	
 	public String getName() {
 		return this.name;
 	}
+	
+	public Integer getLife() {
+		return this.life;
+	}
 
 	public boolean isAlive() {
-		alive = this.life < 1 ? false : true;
-		return alive;
+		return this.life > 1;
 	}
 
 	public void getLifeReduce(Integer damage) {
 		this.life -= damage;
-		isAlive();
+		alive = isAlive();
 	}
 	
 	

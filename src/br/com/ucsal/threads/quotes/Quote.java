@@ -7,17 +7,17 @@ import java.util.List;
 public class Quote {
 
     private static List<String> quote = new ArrayList<>(Arrays.asList(
-            ": Saudações, ",
-            ": Olá, ",
-            ": Você é um tanto peculiar, ",
-            ": Foi você quem pediu, ",
+            ": Saudacoes, ",
+            ": Ola, ",
+            ": Voce e um tanto peculiar, ",
+            ": Foi voce quem pediu, ",
             ": Lutarei com honra, ",
-            ": Não irei perder, ",
-            ": Hahaha! você é hilário, ",
-            ": Esta fazendo cosplay ou você é assim mesmo? ",
-            ": Não sabia que o Halloween havia chegado... Credo, ",
+            ": Nao irei perder, ",
+            ": Hahaha! Voce e hilario, ",
+            ": Esta fazendo cosplay ou voce e assim mesmo? ",
+            ": Nao sabia que o Halloween havia chegado... Credo, ",
             ": Vou equalizar a sua cara! ",
-            ": Não tenho palavrás para você..! "
+            ": Nao tenho palavras para voce..! "
     ));
 
     public static String getQuoteOPhrase(Integer position) {

@@ -1,5 +1,5 @@
 package br.com.ucsal.threads.study;
-import java.util.concurrent.ThreadLocalRandom;
+//import java.util.concurrent.ThreadLocalRandom;
 
 public class POOAula {
     public static void main(String[] args) throws InterruptedException {
@@ -8,10 +8,27 @@ public class POOAula {
 //        threadTest();
 //        joinExample();
 //        exercicio3();
-        SharedObjectProdutorConsumidor();
+//        SharedObjectProdutorConsumidor();
+    	pilhaProdutorConsumidor();
     }
 
-    private static void SharedObjectProdutorConsumidor() {
+    private static void pilhaProdutorConsumidor() {
+		Pilha obj = new Pilha();
+		 Thread[] threads = {
+				 	new Thread(new Consumidor(obj)),
+				 	new Thread(new Consumidor(obj)),
+				 	new Thread(new Consumidor(obj)),
+				 	new Thread(new Consumidor(obj)),
+				 	new Thread(new Consumidor(obj)),
+				 	new Thread(new Produtor(obj)),
+				 	};
+	        for (int i = 0; i < threads.length; i++) {
+	            threads[i].start();
+	        }
+	}
+    
+    /*
+	private static void SharedObjectProdutorConsumidor() {
         SharedObject o = new SharedObject();
         String[] names = {"C1","C2","P1","P2",};
         Thread[] threads = {
@@ -73,5 +90,7 @@ public class POOAula {
     private static int randomNum() {
         return ThreadLocalRandom.current().nextInt(50, 100 + 1);
     }
+    
+    */
 
 }
